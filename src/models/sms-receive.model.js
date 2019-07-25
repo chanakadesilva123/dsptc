@@ -7,9 +7,11 @@ module.exports = function(app) {
   const { Schema } = mongooseClient;
   const smsReceive = new Schema(
     {
-      text: { type: String, required: true },
-      sender: { type: String },
-      recipient: { type: String, required: true }
+      id: { type: String },
+      originator: { type: String },
+      recipient: { type: String },
+      body: { type: String },
+      createdDatetime: { type: Object }
     },
     {
       timestamps: true
